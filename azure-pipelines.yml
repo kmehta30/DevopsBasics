@@ -1,12 +1,11 @@
 - task: Maven@3
   inputs:
     mavenPomFile: 'pom.xml'
-    publishJUnitResults: true
-    testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    allowBrokenSymlinks: false
+    goals: 'test'
+    options: 'install'
+    publishJUnitResults: false
     javaHomeOption: 'JDKVersion'
     mavenVersionOption: 'Default'
     mavenAuthenticateFeed: false
     effectivePomSkip: false
     sonarQubeRunAnalysis: false
-    goal: test
